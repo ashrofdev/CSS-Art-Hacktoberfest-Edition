@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    text-align: center;
+    padding: 10rem;
+    overflow-x: hidden;
+    background-color: #999;
+}
+@keyframes recoil {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        top: -1rem;
+    }
+}
+.gun {
+    animation: recoil .7s infinite;
+    background-color: black;
+    width: 4rem;
+    height: 8rem;
+    margin-top: 5rem;
+    transform: rotate(10deg);
+    border-radius: 1rem;
+    position: relative;
+}
+.gun::before {
+    content: '';
+    background-color: black;
+    width: 15rem;
+    height: 3rem;
+    position: absolute;
+    top: -6rem;
+    left: -2rem;
+    margin-top: 5rem;
+    transform: rotate(-10deg);
+    border-radius: 1rem;
+}
+@keyframes recoil2 {
+    0% {
+        left: -4rem;
+        border-radius: 0
+    }
+    100% {
+        left: -1rem;
+    }
+}
+.gun::after {
+    animation: recoil2 .7s infinite;
+    content: '';
+    background-color: black;
+    width: 14rem;
+    height: 2rem;
+    position: absolute;
+    top: -6.5rem;
+    left: -1rem;
+    border-radius: 1rem;
+    border-top-right-radius: 0;
+    margin-top: 5rem;
+    transform: rotate(-10deg);
+}
+@keyframes bullet {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(70rem);
+        top: -13rem;
+    }
+}
+.bullet {
+    animation: bullet .7s infinite ease-out;
+    background-image: linear-gradient(to right, red, orange);
+    border-top-right-radius: 50rem;
+    border-bottom-right-radius: 50rem;
+    z-index: 100;
+    width: 1.2rem;
+    height: .8rem;
+    transform: rotate(-10deg);
+    position: absolute;
+    top: -2rem;
+    right: -13rem;
+}
+.trigger1 {
+    background-color: black;
+    width: 3rem;
+    height: .5rem;
+    position: absolute;
+    bottom: 3rem;
+    right: -2rem;
+}
+.trigger2 {
+    background-color: black;
+    width: .5rem;
+    height: 3rem;
+    position: absolute;
+    top: 1.5rem;
+    right: -2rem;
+}
+@keyframes boom {
+    0% {
+        opacity: .5;
+        transform: scale(1);
+    }
+    50% {
+        transform: translateX(1rem);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.boom {
+    animation: boom .7s infinite;
+    background-color: orange;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    position: absolute;
+    top: -5rem;
+    right: -14rem;
+}
